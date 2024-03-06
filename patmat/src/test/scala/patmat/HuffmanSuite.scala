@@ -42,5 +42,11 @@ class HuffmanSuite extends munit.FunSuite:
   }
 
 
+  test("decode and encode a very short text should be identity using quickEncode") {
+    new TestTrees:
+      assertEquals(decode(t1, quickEncode(t1)("ab".toList)), "ab".toList)
+  }
+
+
   import scala.concurrent.duration.*
   override val munitTimeout = 10.seconds
